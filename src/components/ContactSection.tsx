@@ -24,11 +24,11 @@ export function ContactSection() {
         </p>
         <div className="flex flex-col sm:flex-row gap-3">
           <a
-            href="mailto:Oskar.rebermark@gmail.com"
+            href="mailto:oskar.rebermark@gmail.com"
             className="inline-flex items-center gap-2 text-sm font-medium border border-border rounded-md px-5 py-2.5 hover:bg-secondary transition-colors duration-300"
           >
             <Mail className="h-4 w-4" />
-            Oskar.rebermark@gmail.com
+            oskar.rebermark@gmail.com
           </a>
           <a
             href="https://linkedin.com/in/oskar-kallebo-rebermark"
@@ -43,9 +43,7 @@ export function ContactSection() {
       </motion.div>
 
       <div className="mt-32 pt-8 border-t border-border">
-        <p className="text-xs text-muted-foreground">
-          © {new Date().getFullYear()} — Built with care.
-        </p>
+        <p className="text-xs text-muted-foreground">© {new Date().getFullYear()} — Built with care.</p>
       </div>
     </section>
   );
