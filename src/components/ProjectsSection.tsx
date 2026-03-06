@@ -3,10 +3,13 @@ import { motion, useInView } from "framer-motion";
 import { projects } from "@/data/projects";
 import { Badge } from "@/components/ui/badge";
 import { ExternalLink } from "lucide-react";
+import { useTheme } from "@/hooks/useTheme";
 
 function ProjectCard({ project, index }: { project: typeof projects[0]; index: number }) {
   const ref = useRef<HTMLDivElement>(null);
   const isInView = useInView(ref, { once: true, margin: "-80px" });
+  const { theme } = useTheme();
+  const imageSrc = theme === "dark" && project.imageDark ? project.imageDark : project.image;
 
   return (
     <motion.div
@@ -24,7 +27,7 @@ function ProjectCard({ project, index }: { project: typeof projects[0]; index: n
       >
         <div className="overflow-hidden rounded-lg mb-4">
           <img
-            src={project.image}
+            src={imageSrc}
             alt={project.title}
             loading="lazy"
             className="w-full aspect-[16/10] object-cover transition-transform duration-700 group-hover:scale-105"
