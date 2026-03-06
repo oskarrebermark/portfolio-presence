@@ -17,8 +17,8 @@ export function HeroSection() {
       >
         <div className="flex items-center gap-3 mb-4">
           <p className="text-sm text-muted-foreground uppercase tracking-widest">Developer &amp; Designer</p>
-          <Badge variant="outline" className="text-xs font-medium border-emerald-500/40 text-emerald-600 dark:text-emerald-400 bg-emerald-500/10">
-            <span className="mr-1.5 inline-block h-1.5 w-1.5 rounded-full bg-emerald-500 animate-pulse" />
+          <Badge variant="outline" className="text-xs font-medium border-[hsl(var(--status)/0.4)] text-[hsl(var(--status-foreground))] bg-[hsl(var(--status)/0.1)]">
+            <span className="mr-1.5 inline-block h-1.5 w-1.5 rounded-full bg-[hsl(var(--status))] animate-pulse" />
             Open to work
           </Badge>
         </div>
