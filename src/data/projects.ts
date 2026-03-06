@@ -19,7 +19,7 @@ export const projects: Project[] = [
     title: "AI-Powered Music Quiz Webapp",
     description:
       "This project was centered on developing a dynamic web app from an original idea. By pasting a playlist, users are able to create a unique quiz that friends could join and play in a 'Kahoot-type' quiz.",
-    image: "https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=800&h=500&fit=crop",
+    image: "TracQuizImg",
     concepts: ["React", "Vite", "Firebase", "MVP Architecture"],
     link: "https://musicquiz-852ea.web.app/",
   },
