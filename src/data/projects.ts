@@ -1,13 +1,16 @@
 import TracQuizImg from "@/data/images/tracQuizlogo.png";
+import TracQuizLightImg from "@/data/images/tracQuizlogo_light.png";
 import PomodoroImg from "@/data/images/PomodoroTimer.png";
 import NotDogsImg from "@/data/images/NotDogsBoxFolded.png";
 import PortfolioBanner from "@/data/images/portfoliobanner.png";
+import SummateImg from "@/data/images/summate.png";
 
 export interface Project {
   id: string;
   title: string;
   description: string;
   image: string;
+  imageDark?: string;
   concepts: string[];
   link?: string;
 }
@@ -18,7 +21,8 @@ export const projects: Project[] = [
     title: "AI-Powered Music Quiz Webapp",
     description:
       "This project was centered on developing a dynamic web app from an original idea. By pasting a playlist, users are able to create a unique quiz that friends could join and play in a 'Kahoot-type' quiz.",
-    image: TracQuizImg,
+    image: TracQuizLightImg,
+    imageDark: TracQuizImg,
     concepts: ["React", "Vite", "Firebase", "MVP Architecture"],
     link: "https://musicquiz-852ea.web.app/",
   },
@@ -27,7 +31,7 @@ export const projects: Project[] = [
     title: "Hiking Planner",
     description:
       "The project centered around the concept of interdependence in hiking. Using the Double Diamond design framework, we explored logistical challenges faced by hikers, such as preparation and borrowing items.",
-    image: "https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?w=800&h=500&fit=crop",
+    image: SummateImg,
     concepts: ["Figma", "Double Diamond", "Interaction Design"],
     link: "https://www.figma.com/proto/JI7gso7NeuaHWgyLZkHq8L/Summate?node-id=0-1&t=ILEH0shLTm3kZXvw-1",
   },
