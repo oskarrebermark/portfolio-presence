@@ -24,11 +24,11 @@ export function ContactSection() {
         </p>
         <div className="flex flex-col sm:flex-row gap-3">
           <a
-            href="mailto:okar.rebermark@gmail.com"
+            href="mailto:Oskar.rebermark@gmail.com"
             className="inline-flex items-center gap-2 text-sm font-medium border border-border rounded-md px-5 py-2.5 hover:bg-secondary transition-colors duration-300"
           >
             <Mail className="h-4 w-4" />
-            okar.rebermark@gmail.com
+            Oskar.rebermark@gmail.com
           </a>
           <a
             href="https://linkedin.com/in/oskar-kallebo-rebermark"
