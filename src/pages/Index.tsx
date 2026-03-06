@@ -12,9 +12,9 @@ const sectionColors = {
     contact: "hsl(270, 45%, 90%)",
   },
   dark: {
-    home: "hsl(220, 40%, 9%)",
-    projects: "hsl(160, 35%, 9%)",
-    contact: "hsl(270, 35%, 9%)",
+    home: "hsl(230, 30%, 8%)",
+    projects: "hsl(170, 25%, 7%)",
+    contact: "hsl(30, 30%, 7%)",
   },
 };
 
