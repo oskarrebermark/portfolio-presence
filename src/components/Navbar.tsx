@@ -41,7 +41,7 @@ export function Navbar() {
       <nav className="hidden lg:flex fixed left-0 top-0 h-screen w-48 flex-col justify-between z-50 bg-background/60 backdrop-blur-xl border-r border-border/50 p-8">
         <div className="space-y-1">
           <p className="text-sm font-semibold tracking-widest uppercase text-muted-foreground mb-8" style={{ fontFamily: "'Space Grotesk', sans-serif" }}>
-            Portfolio
+            Oskar Rebermark
           </p>
           {navItems.map((item) => (
             <button
@@ -71,7 +71,7 @@ export function Navbar() {
       <nav className="lg:hidden fixed top-0 left-0 right-0 z-50 bg-background/60 backdrop-blur-xl border-b border-border/50">
         <div className="flex items-center justify-between px-6 py-4">
           <p className="text-sm font-semibold tracking-widest uppercase text-muted-foreground" style={{ fontFamily: "'Space Grotesk', sans-serif" }}>
-            Portfolio
+            Oskar Rebermark
           </p>
           <div className="flex items-center gap-3">
             <button
