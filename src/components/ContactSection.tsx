@@ -1,6 +1,6 @@
 import { useRef } from "react";
 import { motion, useInView } from "framer-motion";
-import { Mail, Linkedin } from "lucide-react";
+import { Mail, Linkedin, Github } from "lucide-react";
 
 export function ContactSection() {
   const ref = useRef<HTMLDivElement>(null);
@@ -38,6 +38,15 @@ export function ContactSection() {
           >
             <Linkedin className="h-4 w-4" />
             LinkedIn
+          </a>
+          <a
+            href="https://github.com/oskarrebermark"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="inline-flex items-center gap-2 text-sm font-medium border border-border rounded-md px-5 py-2.5 hover:bg-secondary transition-colors duration-300"
+          >
+            <Github className="h-4 w-4" />
+            GitHub
           </a>
         </div>
       </motion.div>
