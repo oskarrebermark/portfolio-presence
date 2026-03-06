@@ -7,11 +7,17 @@ const Index = () => {
   return (
     <>
       <Navbar />
-      <main className="lg:ml-48 px-6 sm:px-12 md:px-16 lg:px-20 max-w-4xl pt-16 lg:pt-0">
-        <HeroSection />
-        <ProjectsSection />
-        <ContactSection />
-      </main>
+      <div className="lg:ml-48 pt-16 lg:pt-0">
+        <div className="px-6 sm:px-12 md:px-16 lg:px-20 max-w-4xl">
+          <HeroSection />
+        </div>
+        <div className="px-6 sm:px-12 md:px-16 lg:px-20">
+          <ProjectsSection />
+        </div>
+        <div className="px-6 sm:px-12 md:px-16 lg:px-20 max-w-4xl">
+          <ContactSection />
+        </div>
+      </div>
     </>
   );
 };
