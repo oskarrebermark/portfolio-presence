@@ -69,6 +69,8 @@
     --shadow-2xl: 24px 24px 0px 0px #000000;
     --tracking-normal: 0em;
     --spacing: 0.25rem;
+    --status: 152 69% 40%;
+    --status-foreground: 152 69% 30%;
   }
 
   .dark {
