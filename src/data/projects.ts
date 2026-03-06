@@ -1,3 +1,9 @@
+import TracQuizImg from "@/data/images/tracQuizlogo.png";
+import SummateImg from "@/data/images/tracQuizlogo.png";
+import PomodoroImg from "@/data/images/tracQuizlogo.png";
+import SunnifyImg from "@/data/images/tracQuizlogo.png";
+import NotDogsImg from "@/data/images/tracQuizlogo.png";
+
 export interface Project {
   id: string;
   title: string;
