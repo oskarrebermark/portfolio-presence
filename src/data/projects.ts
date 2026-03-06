@@ -1,8 +1,7 @@
 import TracQuizImg from "@/data/images/tracQuizlogo.png";
-import SummateImg from "@/data/images/tracQuizlogo.png";
-import PomodoroImg from "@/data/images/tracQuizlogo.png";
-import SunnifyImg from "@/data/images/tracQuizlogo.png";
-import NotDogsImg from "@/data/images/tracQuizlogo.png";
+import PomodoroImg from "@/data/images/PomodoroTimer.png";
+import NotDogsImg from "@/data/images/NotDogsBoxFolded.png";
+import PortfolioBanner from "@/data/images/portfoliobanner.png";
 
 export interface Project {
   id: string;
@@ -19,7 +18,7 @@ export const projects: Project[] = [
     title: "AI-Powered Music Quiz Webapp",
     description:
       "This project was centered on developing a dynamic web app from an original idea. By pasting a playlist, users are able to create a unique quiz that friends could join and play in a 'Kahoot-type' quiz.",
-    image: "TracQuizImg",
+    image: TracQuizImg,
     concepts: ["React", "Vite", "Firebase", "MVP Architecture"],
     link: "https://musicquiz-852ea.web.app/",
   },
@@ -37,7 +36,7 @@ export const projects: Project[] = [
     title: "Pomodoro Timer",
     description:
       "To help me with study breaks I developed a simple pomodoro timer MacOS application using Swift and SwiftUI.",
-    image: "https://images.unsplash.com/photo-1611224923853-80b023f02d71?w=800&h=500&fit=crop",
+    image: PomodoroImg,
     concepts: ["Swift", "MacOS", "Pomodoro Method"],
     link: "#",
   },
@@ -55,7 +54,7 @@ export const projects: Project[] = [
     title: "Product Design",
     description:
       "This project revolved around with designing different elements for an imaginary product of my choosing.",
-    image: "https://images.unsplash.com/photo-1504608524841-42fe6f032b4b?w=800&h=500&fit=crop",
+    image: NotDogsImg,
     concepts: ["Graphic Design", "Branding", "Affinity Designer"],
     link: "#",
   },
