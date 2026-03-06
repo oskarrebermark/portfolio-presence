@@ -1,6 +1,6 @@
 import { useRef } from "react";
 import { motion, useInView } from "framer-motion";
-import { Mail } from "lucide-react";
+import { Mail, Linkedin } from "lucide-react";
 
 export function ContactSection() {
   const ref = useRef<HTMLDivElement>(null);
@@ -22,13 +22,24 @@ export function ContactSection() {
         <p className="text-muted-foreground leading-relaxed mb-8">
           Interested in working together? Feel free to reach out. I'm always open to new projects and collaborations.
         </p>
-        <a
-          href="mailto:hello@example.com"
-          className="inline-flex items-center gap-2 text-sm font-medium border border-border rounded-md px-5 py-2.5 hover:bg-secondary transition-colors duration-300"
-        >
-          <Mail className="h-4 w-4" />
-          hello@example.com
-        </a>
+        <div className="flex flex-col sm:flex-row gap-3">
+          <a
+            href="mailto:okar.rebermark@gmail.com"
+            className="inline-flex items-center gap-2 text-sm font-medium border border-border rounded-md px-5 py-2.5 hover:bg-secondary transition-colors duration-300"
+          >
+            <Mail className="h-4 w-4" />
+            okar.rebermark@gmail.com
+          </a>
+          <a
+            href="https://linkedin.com/in/oskar-kallebo-rebermark"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="inline-flex items-center gap-2 text-sm font-medium border border-border rounded-md px-5 py-2.5 hover:bg-secondary transition-colors duration-300"
+          >
+            <Linkedin className="h-4 w-4" />
+            LinkedIn
+          </a>
+        </div>
       </motion.div>
 
       <div className="mt-32 pt-8 border-t border-border">
