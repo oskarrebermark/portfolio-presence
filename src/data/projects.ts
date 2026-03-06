@@ -10,34 +10,47 @@ export interface Project {
 export const projects: Project[] = [
   {
     id: "1",
-    title: "E-Commerce Platform",
-    description: "A modern shopping experience with real-time inventory management and seamless checkout flow.",
-    image: "https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?w=800&h=500&fit=crop",
-    concepts: ["React", "TypeScript", "Stripe", "Tailwind CSS"],
-    link: "#",
+    title: "AI-Powered Music Quiz Webapp",
+    description:
+      "This project was centered on developing a dynamic web app from an original idea. By pasting a playlist, users are able to create a unique quiz that friends could join and play in a 'Kahoot-type' quiz.",
+    image: "https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=800&h=500&fit=crop",
+    concepts: ["React", "Vite", "Firebase", "MVP Architecture"],
+    link: "https://musicquiz-852ea.web.app/",
   },
   {
     id: "2",
-    title: "Analytics Dashboard",
-    description: "Data visualization tool for tracking key metrics with interactive charts and custom reports.",
-    image: "https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=800&h=500&fit=crop",
-    concepts: ["D3.js", "Node.js", "PostgreSQL", "REST API"],
-    link: "#",
+    title: "Hiking Planner",
+    description:
+      "The project centered around the concept of interdependence in hiking. Using the Double Diamond design framework, we explored logistical challenges faced by hikers, such as preparation and borrowing items.",
+    image: "https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?w=800&h=500&fit=crop",
+    concepts: ["Figma", "Double Diamond", "Interaction Design"],
+    link: "https://www.figma.com/proto/JI7gso7NeuaHWgyLZkHq8L/Summate?node-id=0-1&t=ILEH0shLTm3kZXvw-1",
   },
   {
     id: "3",
-    title: "Task Management App",
-    description: "Collaborative project management tool with real-time updates and team workflows.",
+    title: "Pomodoro Timer",
+    description:
+      "To help me with study breaks I developed a simple pomodoro timer MacOS application using Swift and SwiftUI.",
     image: "https://images.unsplash.com/photo-1611224923853-80b023f02d71?w=800&h=500&fit=crop",
-    concepts: ["React", "Firebase", "Drag & Drop", "WebSockets"],
+    concepts: ["Swift", "MacOS", "Pomodoro Method"],
     link: "#",
   },
   {
     id: "4",
-    title: "Weather Application",
-    description: "Beautiful weather forecasting app with location-based data and animated visualizations.",
+    title: "Weather Sonification Webapp",
+    description:
+      "This project explored the possibility of conveying weather information through soundbites for a more intuitive experience.",
     image: "https://images.unsplash.com/photo-1504608524841-42fe6f032b4b?w=800&h=500&fit=crop",
-    concepts: ["API Integration", "Geolocation", "CSS Animations", "PWA"],
+    concepts: ["React", "WebSocket", "Sonification", "Weather Data", "SMHI API"],
+    link: "#",
+  },
+  {
+    id: "5",
+    title: "Product Design",
+    description:
+      "This project revolved around with designing different elements for an imaginary product of my choosing.",
+    image: "https://images.unsplash.com/photo-1504608524841-42fe6f032b4b?w=800&h=500&fit=crop",
+    concepts: ["Graphic Design", "Branding", "Affinity Designer"],
     link: "#",
   },
 ];
