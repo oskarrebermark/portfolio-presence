@@ -4,6 +4,8 @@ import PomodoroImg from "@/data/images/PomodoroTimer.png";
 import NotDogsImg from "@/data/images/NotDogsBoxFolded.png";
 import PortfolioBanner from "@/data/images/portfoliobanner.png";
 import SummateImg from "@/data/images/summate.png";
+import SunnyFyImg from "@/data/images/sunnyfylogo.png";
+import SunnyFyLightImg from "@/data/images/sunnyfylogo_light.png";
 
 export interface Project {
   id: string;
@@ -49,7 +51,8 @@ export const projects: Project[] = [
     title: "Weather Sonification Webapp",
     description:
       "This project explored the possibility of conveying weather information through soundbites for a more intuitive experience.",
-    image: "https://images.unsplash.com/photo-1504608524841-42fe6f032b4b?w=800&h=500&fit=crop",
+    image: SunnyFyImg,
+    imageDark: SunnyFyLightImg,
     concepts: ["React", "WebSocket", "Sonification", "Weather Data", "SMHI API"],
     link: "#",
   },

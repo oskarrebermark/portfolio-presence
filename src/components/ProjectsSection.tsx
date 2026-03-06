@@ -10,22 +10,22 @@ function ProjectCard({ project, index }: { project: typeof projects[0]; index: n
   const isInView = useInView(ref, { once: true, margin: "-80px" });
   const { theme } = useTheme();
   const imageSrc = theme === "dark" && project.imageDark ? project.imageDark : project.image;
+  const isReversed = index % 2 === 1;
 
   return (
     <motion.div
       ref={ref}
       initial={{ opacity: 0, y: 40 }}
       animate={isInView ? { opacity: 1, y: 0 } : {}}
-      transition={{ duration: 0.6, delay: index * 0.1, ease: [0.25, 0.46, 0.45, 0.94] }}
-      className="group"
+      transition={{ duration: 0.6, delay: 0.1, ease: [0.25, 0.46, 0.45, 0.94] }}
     >
       <a
         href={project.link || "#"}
         target="_blank"
         rel="noopener noreferrer"
-        className="block"
+        className={`group flex flex-col ${isReversed ? "md:flex-row-reverse" : "md:flex-row"} gap-8 md:gap-12 items-center`}
       >
-        <div className="overflow-hidden rounded-lg mb-4">
+        <div className="w-full md:w-1/2 overflow-hidden rounded-lg">
           <img
             src={imageSrc}
             alt={project.title}
@@ -33,14 +33,14 @@ function ProjectCard({ project, index }: { project: typeof projects[0]; index: n
             className="w-full aspect-[16/10] object-cover transition-transform duration-700 group-hover:scale-105"
           />
         </div>
-        <div className="space-y-2">
-          <div className="flex items-center justify-between">
-            <h3 className="text-lg font-medium" style={{ fontFamily: "'Space Grotesk', sans-serif" }}>
+        <div className="w-full md:w-1/2 space-y-4">
+          <div className="flex items-center gap-3">
+            <h3 className="text-xl md:text-2xl font-medium" style={{ fontFamily: "'Space Grotesk', sans-serif" }}>
               {project.title}
             </h3>
-            <ExternalLink className="h-4 w-4 text-muted-foreground opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+            <ExternalLink className="h-4 w-4 text-muted-foreground opacity-0 group-hover:opacity-100 transition-opacity duration-300 shrink-0" />
           </div>
-          <p className="text-sm text-muted-foreground leading-relaxed">
+          <p className="text-sm md:text-base text-muted-foreground leading-relaxed">
             {project.description}
           </p>
           <div className="flex flex-wrap gap-2 pt-1">
@@ -78,7 +78,7 @@ export function ProjectsSection() {
         </h2>
       </motion.div>
 
-      <div className="grid grid-cols-1 md:grid-cols-2 gap-x-8 gap-y-16">
+      <div className="flex flex-col gap-20 md:gap-28">
         {projects.map((project, i) => (
           <ProjectCard key={project.id} project={project} index={i} />
         ))}
