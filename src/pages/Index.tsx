@@ -7,14 +7,14 @@ import { useTheme } from "@/hooks/useTheme";
 
 const sectionColors = {
   light: {
-    home: "hsl(220, 35%, 94%)",
-    projects: "hsl(160, 30%, 93%)",
-    contact: "hsl(270, 30%, 94%)",
+    home: "hsl(220, 50%, 90%)",
+    projects: "hsl(160, 45%, 88%)",
+    contact: "hsl(270, 45%, 90%)",
   },
   dark: {
-    home: "hsl(220, 25%, 6%)",
-    projects: "hsl(160, 22%, 7%)",
-    contact: "hsl(270, 22%, 7%)",
+    home: "hsl(220, 40%, 9%)",
+    projects: "hsl(160, 35%, 9%)",
+    contact: "hsl(270, 35%, 9%)",
   },
 };
 
