@@ -1,5 +1,6 @@
 import { useRef } from "react";
 import { motion, useInView } from "framer-motion";
+import { Badge } from "@/components/ui/badge";
 
 export function HeroSection() {
   const ref = useRef<HTMLDivElement>(null);
@@ -14,7 +15,13 @@ export function HeroSection() {
         transition={{ duration: 0.8, ease: [0.25, 0.46, 0.45, 0.94] }}
         className="max-w-2xl"
       >
-        <p className="text-sm text-muted-foreground uppercase tracking-widest mb-4">Developer &amp; Designer</p>
+        <div className="flex items-center gap-3 mb-4">
+          <p className="text-sm text-muted-foreground uppercase tracking-widest">Developer &amp; Designer</p>
+          <Badge variant="outline" className="text-xs font-medium border-emerald-500/40 text-emerald-600 dark:text-emerald-400 bg-emerald-500/10">
+            <span className="mr-1.5 inline-block h-1.5 w-1.5 rounded-full bg-emerald-500 animate-pulse" />
+            Open to work
+          </Badge>
+        </div>
         <h1
           className="text-4xl sm:text-5xl md:text-6xl font-semibold leading-tight tracking-tight mb-6"
           style={{ fontFamily: "'Space Grotesk', sans-serif" }}
@@ -25,10 +32,25 @@ export function HeroSection() {
           <br />
           <span className="text-muted-foreground">with passion.</span>
         </h1>
-        <p className="text-base text-muted-foreground leading-relaxed max-w-md">
+        <p className="text-base text-muted-foreground leading-relaxed max-w-md mb-8">
           I craft clean, thoughtful interfaces and robust applications. Focused on simplicity, usability, and attention
           to detail.
         </p>
+
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          animate={isInView ? { opacity: 1, y: 0 } : {}}
+          transition={{ duration: 0.8, delay: 0.3, ease: [0.25, 0.46, 0.45, 0.94] }}
+          className="border-l-2 border-border pl-5 space-y-3"
+        >
+          <p className="text-xs text-muted-foreground uppercase tracking-widest font-medium">About me</p>
+          <p className="text-sm text-muted-foreground leading-relaxed max-w-lg">
+            Second-year master's student in Interactive Media Technology at KTH Royal Institute of Technology. My studies have spanned interaction design, sound in interaction, dynamic web development, and haptics.
+          </p>
+          <p className="text-sm text-muted-foreground leading-relaxed max-w-lg">
+            Previously an exchange student at Science Tokyo in Japan. Currently writing my master's thesis on Conversion Rate Optimization.
+          </p>
+        </motion.div>
       </motion.div>
     </section>
   );
