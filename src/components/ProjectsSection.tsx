@@ -35,12 +35,12 @@ function ProjectCard({ project, index }: { project: typeof projects[0]; index: n
         </div>
         <div className="w-full md:w-1/2 space-y-4">
           <div className="flex items-center gap-3">
-            <h3 className="text-xl md:text-2xl font-medium" style={{ fontFamily: "'Space Grotesk', sans-serif" }}>
+            <h3 className="text-2xl md:text-3xl font-medium" style={{ fontFamily: "'Space Grotesk', sans-serif" }}>
               {project.title}
             </h3>
             <ExternalLink className="h-4 w-4 text-muted-foreground opacity-0 group-hover:opacity-100 transition-opacity duration-300 shrink-0" />
           </div>
-          <p className="text-sm md:text-base text-muted-foreground leading-relaxed">
+          <p className="text-base md:text-lg text-muted-foreground leading-relaxed">
             {project.description}
           </p>
           <div className="flex flex-wrap gap-2 pt-1">
@@ -78,7 +78,7 @@ export function ProjectsSection() {
         </h2>
       </motion.div>
 
-      <div className="flex flex-col gap-20 md:gap-28">
+      <div className="flex flex-col gap-24 md:gap-36">
         {projects.map((project, i) => (
           <ProjectCard key={project.id} project={project} index={i} />
         ))}
