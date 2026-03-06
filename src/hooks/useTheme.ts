@@ -1,4 +1,4 @@
-import { useCallback, useEffect, useSyncExternalStore } from "react";
+import { useCallback, useEffect, useState } from "react";
 
 type Theme = "light" | "dark";
 
@@ -6,11 +6,6 @@ const listeners = new Set<() => void>();
 
 function getTheme(): Theme {
   return document.documentElement.classList.contains("dark") ? "dark" : "light";
-}
-
-function subscribe(cb: () => void) {
-  listeners.add(cb);
-  return () => listeners.delete(cb);
 }
 
 function applyTheme(theme: Theme) {
@@ -21,15 +16,21 @@ function applyTheme(theme: Theme) {
   listeners.forEach((cb) => cb());
 }
 
-// Initialize on load
-(() => {
+// Initialize on first load
+if (typeof window !== "undefined" && !document.documentElement.classList.contains("light") && !document.documentElement.classList.contains("dark")) {
   const stored = localStorage.getItem("theme") as Theme | null;
   const initial = stored ?? (window.matchMedia("(prefers-color-scheme: dark)").matches ? "dark" : "light");
   document.documentElement.classList.add(initial);
-})();
+}
 
 export function useTheme() {
-  const theme = useSyncExternalStore(subscribe, getTheme, () => "light" as Theme);
+  const [theme, setTheme] = useState<Theme>(getTheme);
+
+  useEffect(() => {
+    const sync = () => setTheme(getTheme());
+    listeners.add(sync);
+    return () => { listeners.delete(sync); };
+  }, []);
 
   const toggleTheme = useCallback(() => {
     applyTheme(theme === "light" ? "dark" : "light");
