@@ -35,11 +35,9 @@ export function HeroSection() {
           className="text-4xl sm:text-5xl md:text-6xl font-semibold leading-tight tracking-tight mb-6"
           style={{ fontFamily: "'Space Grotesk', sans-serif" }}
         >
-          <span className="shimmer-text">
-            Building thoughtful
-            <br />
-            digital experiences
-          </span>
+          Building thoughtful
+          <br />
+          digital experiences
           <br />
           <span className="text-muted-foreground">with passion.</span>
         </motion.h1>
