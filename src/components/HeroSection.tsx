@@ -10,19 +10,28 @@ export function HeroSection() {
     <section id="home" className="min-h-screen flex items-center py-32">
       <motion.div
         ref={ref}
-        initial={{ opacity: 0, y: 30 }}
-        animate={isInView ? { opacity: 1, y: 0 } : {}}
-        transition={{ duration: 0.8, ease: [0.25, 0.46, 0.45, 0.94] }}
+        initial={{ opacity: 0 }}
+        animate={isInView ? { opacity: 1 } : {}}
+        transition={{ duration: 0.6 }}
         className="max-w-2xl"
       >
-        <div className="flex items-center gap-3 mb-4">
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          animate={isInView ? { opacity: 1, y: 0 } : {}}
+          transition={{ duration: 0.7, delay: 0.1, ease: [0.25, 0.46, 0.45, 0.94] }}
+          className="flex items-center gap-3 mb-4"
+        >
           <p className="text-sm text-muted-foreground uppercase tracking-widest">Developer &amp; Designer</p>
           <Badge variant="outline" className="text-xs font-medium border-[hsl(var(--status)/0.4)] text-[hsl(var(--status-foreground))] bg-[hsl(var(--status)/0.1)]">
             <span className="mr-1.5 inline-block h-1.5 w-1.5 rounded-full bg-[hsl(var(--status))] animate-pulse" />
             Open to work
           </Badge>
-        </div>
-        <h1
+        </motion.div>
+
+        <motion.h1
+          initial={{ opacity: 0, y: 30 }}
+          animate={isInView ? { opacity: 1, y: 0 } : {}}
+          transition={{ duration: 0.8, delay: 0.25, ease: [0.25, 0.46, 0.45, 0.94] }}
           className="text-4xl sm:text-5xl md:text-6xl font-semibold leading-tight tracking-tight mb-6"
           style={{ fontFamily: "'Space Grotesk', sans-serif" }}
         >
@@ -31,16 +40,22 @@ export function HeroSection() {
           digital experiences
           <br />
           <span className="text-muted-foreground">with passion.</span>
-        </h1>
-        <p className="text-base text-muted-foreground leading-relaxed max-w-md mb-8">
+        </motion.h1>
+
+        <motion.p
+          initial={{ opacity: 0, y: 20 }}
+          animate={isInView ? { opacity: 1, y: 0 } : {}}
+          transition={{ duration: 0.7, delay: 0.45, ease: [0.25, 0.46, 0.45, 0.94] }}
+          className="text-base text-muted-foreground leading-relaxed max-w-md mb-8"
+        >
           I craft clean, thoughtful interfaces and robust applications. Focused on simplicity, usability, and attention
           to detail.
-        </p>
+        </motion.p>
 
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           animate={isInView ? { opacity: 1, y: 0 } : {}}
-          transition={{ duration: 0.8, delay: 0.3, ease: [0.25, 0.46, 0.45, 0.94] }}
+          transition={{ duration: 0.8, delay: 0.6, ease: [0.25, 0.46, 0.45, 0.94] }}
           className="border-l-2 border-border pl-5 space-y-3"
         >
           <p className="text-xs text-muted-foreground uppercase tracking-widest font-medium">About me</p>
