@@ -35,7 +35,7 @@ function ProjectCard({ project, index }: { project: typeof projects[0]; index: n
                 src={imageSrc}
                 alt={project.title}
                 loading="lazy"
-                className={`w-full aspect-[16/10] object-cover transition-transform duration-700 ${hasLink ? "group-hover:scale-105" : ""}`}
+                className={`w-full aspect-[16/10] object-cover transition-transform duration-700 group-hover:scale-105`}
               />
             </div>
             <div className="w-full md:w-1/2 space-y-4">
