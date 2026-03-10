@@ -46,7 +46,7 @@ function ProjectCard({ project, index }: { project: typeof projects[0]; index: n
                 scaleOnHover={1.05}
                 rotateAmplitude={12}
                 showMobileWarning={false}
-                showTooltip={true}
+                showTooltip={false}
               />
             </div>
             <div className="w-full md:w-1/2 space-y-4">
