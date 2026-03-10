@@ -34,10 +34,12 @@ export function HeroSection() {
           className="flex items-center gap-3 mb-4"
         >
           <p className="text-sm text-muted-foreground uppercase tracking-widest">Developer &amp; Designer</p>
-          <Badge variant="outline" className="text-xs font-medium border-[hsl(var(--status)/0.4)] text-[hsl(var(--status-foreground))] bg-[hsl(var(--status)/0.1)]">
-            <span className="mr-1.5 inline-block h-1.5 w-1.5 rounded-full bg-[hsl(var(--status))] animate-pulse" />
-            Open to work
-          </Badge>
+          <a href="https://linkedin.com/in/oskar-kallebo-rebermark" target="_blank" rel="noopener noreferrer">
+            <Badge variant="outline" className="text-xs font-medium border-[hsl(var(--status)/0.4)] text-[hsl(var(--status-foreground))] bg-[hsl(var(--status)/0.1)] cursor-pointer hover:bg-[hsl(var(--status)/0.2)] transition-colors">
+              <span className="mr-1.5 inline-block h-1.5 w-1.5 rounded-full bg-[hsl(var(--status))] animate-pulse" />
+              Open to work
+            </Badge>
+          </a>
         </motion.div>
 
         <motion.h1
