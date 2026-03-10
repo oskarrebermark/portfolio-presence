@@ -11,7 +11,7 @@ export function ContactSection() {
 
   return (
     <section id="contact" className="py-32 relative">
-      <div className="absolute inset-0 pointer-events-none opacity-[0.12]">
+      <div className="absolute inset-0 pointer-events-none opacity-[0.20]">
         <Particles
           particleCount={80}
           particleSpread={8}
