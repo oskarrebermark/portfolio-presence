@@ -11,6 +11,8 @@ export function HeroSection() {
   const isMobile = useIsMobile();
   const { theme } = useTheme();
   const ballColor = theme === "dark" ? "#ffffff" : "#000000";
+
+  return (
     <section id="home" className="min-h-screen flex items-center py-32 relative">
       <motion.div
         ref={ref}
