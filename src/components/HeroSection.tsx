@@ -70,6 +70,27 @@ export function HeroSection() {
           </p>
         </motion.div>
       </motion.div>
+
+      {!isMobile && (
+        <motion.div
+          initial={{ opacity: 0 }}
+          animate={isInView ? { opacity: 1 } : {}}
+          transition={{ duration: 1.2, delay: 0.8 }}
+          className="absolute right-0 top-1/2 -translate-y-1/2 w-[400px] h-[400px] pointer-events-auto"
+        >
+          <MetaBalls
+            color="#000000"
+            cursorBallColor="#000000"
+            ballCount={12}
+            speed={0.3}
+            animationSize={25}
+            enableTransparency={true}
+            hoverSmoothness={0.1}
+            clumpFactor={1.2}
+            cursorBallSize={2}
+          />
+        </motion.div>
+      )}
     </section>
   );
 }
