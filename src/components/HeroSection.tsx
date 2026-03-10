@@ -1,13 +1,16 @@
 import { useRef } from "react";
 import { motion, useInView } from "framer-motion";
 import { Badge } from "@/components/ui/badge";
+import { useIsMobile } from "@/hooks/use-mobile";
+import MetaBalls from "@/components/MetaBalls";
 
 export function HeroSection() {
   const ref = useRef<HTMLDivElement>(null);
   const isInView = useInView(ref, { once: true });
+  const isMobile = useIsMobile();
 
   return (
-    <section id="home" className="min-h-screen flex items-center py-32">
+    <section id="home" className="min-h-screen flex items-center py-32 relative">
       <motion.div
         ref={ref}
         initial={{ opacity: 0 }}
