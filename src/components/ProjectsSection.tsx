@@ -1,4 +1,5 @@
 import { useRef } from "react";
+import { useIsMobile } from "@/hooks/use-mobile";
 import { motion, useInView } from "framer-motion";
 import { projects } from "@/data/projects";
 import { Badge } from "@/components/ui/badge";
@@ -10,6 +11,7 @@ function ProjectCard({ project, index }: { project: typeof projects[0]; index: n
   const ref = useRef<HTMLDivElement>(null);
   const isInView = useInView(ref, { once: true, margin: "-80px" });
   const { theme } = useTheme();
+  const isMobile = useIsMobile();
   const imageSrc = theme === "dark" && project.imageDark ? project.imageDark : project.image;
   const isReversed = index % 2 === 1;
 
@@ -36,9 +38,9 @@ function ProjectCard({ project, index }: { project: typeof projects[0]; index: n
                 imageSrc={imageSrc}
                 altText={project.title}
                 captionText={project.title}
-                containerHeight="320px"
+                containerHeight={isMobile ? "240px" : "320px"}
                 containerWidth="100%"
-                imageHeight="280px"
+                imageHeight={isMobile ? "200px" : "280px"}
                 imageWidth="100%"
                 scaleOnHover={1.05}
                 rotateAmplitude={12}
