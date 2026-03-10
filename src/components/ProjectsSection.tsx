@@ -31,7 +31,7 @@ function ProjectCard({ project, index }: { project: typeof projects[0]; index: n
             {...wrapperProps}
             className={`group flex flex-col ${isReversed ? "md:flex-row-reverse" : "md:flex-row"} gap-8 md:gap-12 items-center ${hasLink ? "cursor-pointer" : ""}`}
           >
-            <div className="w-full md:w-1/2 overflow-hidden rounded-lg">
+            <div className="w-full md:w-1/2 overflow-visible rounded-lg">
               <TiltedCard
                 imageSrc={imageSrc}
                 altText={project.title}
