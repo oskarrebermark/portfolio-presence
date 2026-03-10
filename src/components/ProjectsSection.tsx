@@ -4,6 +4,7 @@ import { projects } from "@/data/projects";
 import { Badge } from "@/components/ui/badge";
 import { ExternalLink } from "lucide-react";
 import { useTheme } from "@/hooks/useTheme";
+import TiltedCard from "@/components/TiltedCard";
 
 function ProjectCard({ project, index }: { project: typeof projects[0]; index: number }) {
   const ref = useRef<HTMLDivElement>(null);
