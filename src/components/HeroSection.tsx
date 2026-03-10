@@ -4,6 +4,7 @@ import { Badge } from "@/components/ui/badge";
 import { useIsMobile } from "@/hooks/use-mobile";
 import { useTheme } from "@/hooks/useTheme";
 import MetaBalls from "@/components/MetaBalls";
+import ShinyText from "@/components/ShinyText";
 
 export function HeroSection() {
   const ref = useRef<HTMLDivElement>(null);
@@ -45,7 +46,13 @@ export function HeroSection() {
           <br />
           digital experiences
           <br />
-          <span className="text-muted-foreground">with passion.</span>
+          <ShinyText
+            text="with passion."
+            color={theme === "dark" ? "#737373" : "#737373"}
+            shineColor={theme === "dark" ? "#ffffff" : "#000000"}
+            speed={3}
+            className="text-4xl sm:text-5xl md:text-6xl font-semibold leading-tight tracking-tight"
+          />
         </motion.h1>
 
         <motion.p
