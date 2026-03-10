@@ -1,7 +1,6 @@
 import { useRef } from "react";
 import { motion, useInView } from "framer-motion";
 import { Mail, Linkedin, Github } from "lucide-react";
-import DarkVeil from "@/components/DarkVeil";
 
 export function ContactSection() {
   const ref = useRef<HTMLDivElement>(null);
@@ -9,9 +8,6 @@ export function ContactSection() {
 
   return (
     <section id="contact" className="py-32 relative">
-      <div className="absolute inset-0 pointer-events-none opacity-[0.20]">
-        <DarkVeil speed={0.3} />
-      </div>
 
       <motion.div
         ref={ref}
