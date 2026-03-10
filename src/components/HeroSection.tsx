@@ -4,6 +4,7 @@ import { Badge } from "@/components/ui/badge";
 import { useIsMobile } from "@/hooks/use-mobile";
 import { useTheme } from "@/hooks/useTheme";
 import MetaBalls from "@/components/MetaBalls";
+import ShinyText from "@/components/ShinyText";
 
 export function HeroSection() {
   const ref = useRef<HTMLDivElement>(null);
