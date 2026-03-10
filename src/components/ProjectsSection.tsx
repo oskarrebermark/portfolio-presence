@@ -1,4 +1,5 @@
 import { useRef } from "react";
+import { useIsMobile } from "@/hooks/use-mobile";
 import { motion, useInView } from "framer-motion";
 import { projects } from "@/data/projects";
 import { Badge } from "@/components/ui/badge";
