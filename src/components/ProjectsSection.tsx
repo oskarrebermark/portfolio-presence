@@ -38,9 +38,9 @@ function ProjectCard({ project, index }: { project: typeof projects[0]; index: n
                 imageSrc={imageSrc}
                 altText={project.title}
                 captionText={project.title}
-                containerHeight="320px"
+                containerHeight={isMobile ? "240px" : "320px"}
                 containerWidth="100%"
-                imageHeight="280px"
+                imageHeight={isMobile ? "200px" : "280px"}
                 imageWidth="100%"
                 scaleOnHover={1.05}
                 rotateAmplitude={12}
