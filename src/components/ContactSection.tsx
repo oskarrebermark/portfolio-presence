@@ -6,22 +6,11 @@ import DarkVeil from "@/components/DarkVeil";
 export function ContactSection() {
   const ref = useRef<HTMLDivElement>(null);
   const isInView = useInView(ref, { once: true, margin: "-80px" });
-  const { theme } = useTheme();
 
   return (
     <section id="contact" className="py-32 relative">
       <div className="absolute inset-0 pointer-events-none opacity-[0.20]">
-        <Particles
-          particleCount={80}
-          particleSpread={8}
-          speed={0.05}
-          particleColors={theme === "dark" ? ["#ffffff", "#aaaaaa"] : ["#000000", "#555555"]}
-          alphaParticles={true}
-          particleBaseSize={60}
-          sizeRandomness={0.5}
-          cameraDistance={25}
-          disableRotation={false}
-        />
+        <DarkVeil speed={0.3} />
       </div>
 
       <motion.div
