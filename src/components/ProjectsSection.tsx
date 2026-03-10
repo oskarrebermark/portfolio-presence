@@ -32,11 +32,18 @@ function ProjectCard({ project, index }: { project: typeof projects[0]; index: n
             className={`group flex flex-col ${isReversed ? "md:flex-row-reverse" : "md:flex-row"} gap-8 md:gap-12 items-center ${hasLink ? "cursor-pointer" : ""}`}
           >
             <div className="w-full md:w-1/2 overflow-hidden rounded-lg">
-              <img
-                src={imageSrc}
-                alt={project.title}
-                loading="lazy"
-                className={`w-full aspect-[16/10] object-cover transition-transform duration-700 group-hover:scale-105`}
+              <TiltedCard
+                imageSrc={imageSrc}
+                altText={project.title}
+                captionText={project.title}
+                containerHeight="320px"
+                containerWidth="100%"
+                imageHeight="280px"
+                imageWidth="100%"
+                scaleOnHover={1.05}
+                rotateAmplitude={12}
+                showMobileWarning={false}
+                showTooltip={true}
               />
             </div>
             <div className="w-full md:w-1/2 space-y-4">
