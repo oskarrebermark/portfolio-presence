@@ -1,8 +1,7 @@
 import { useRef } from "react";
 import { motion, useInView } from "framer-motion";
 import { Mail, Linkedin, Github } from "lucide-react";
-import { useTheme } from "@/hooks/useTheme";
-import Particles from "@/components/Particles";
+import DarkVeil from "@/components/DarkVeil";
 
 export function ContactSection() {
   const ref = useRef<HTMLDivElement>(null);
