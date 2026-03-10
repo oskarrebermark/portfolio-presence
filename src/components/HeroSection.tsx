@@ -82,8 +82,8 @@ export function HeroSection() {
           className="absolute right-0 top-1/2 -translate-y-1/2 w-[400px] h-[400px] pointer-events-auto"
         >
           <MetaBalls
-            color="#000000"
-            cursorBallColor="#000000"
+            color={ballColor}
+            cursorBallColor={ballColor}
             ballCount={12}
             speed={0.3}
             animationSize={25}
