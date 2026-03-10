@@ -11,6 +11,7 @@ function ProjectCard({ project, index }: { project: typeof projects[0]; index: n
   const ref = useRef<HTMLDivElement>(null);
   const isInView = useInView(ref, { once: true, margin: "-80px" });
   const { theme } = useTheme();
+  const isMobile = useIsMobile();
   const imageSrc = theme === "dark" && project.imageDark ? project.imageDark : project.image;
   const isReversed = index % 2 === 1;
 
