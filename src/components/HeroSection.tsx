@@ -79,7 +79,7 @@ export function HeroSection() {
           initial={{ opacity: 0 }}
           animate={isInView ? { opacity: 1 } : {}}
           transition={{ duration: 1.2, delay: 0.8 }}
-          className="absolute right-0 top-1/2 -translate-y-1/2 w-[400px] h-[400px] pointer-events-auto"
+          className="absolute right-0 top-1/2 -translate-y-1/2 w-[400px] h-[400px] pointer-events-auto hidden lg:block"
         >
           <MetaBalls
             color={ballColor}
