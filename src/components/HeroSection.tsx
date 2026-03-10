@@ -1,26 +1,31 @@
 import { useRef } from "react";
 import { motion, useInView } from "framer-motion";
 import { Badge } from "@/components/ui/badge";
-import { useIsMobile } from "@/hooks/use-mobile";
 import { useTheme } from "@/hooks/useTheme";
-import MetaBalls from "@/components/MetaBalls";
 import ShinyText from "@/components/ShinyText";
+import Threads from "@/components/Threads";
 
 export function HeroSection() {
   const ref = useRef<HTMLDivElement>(null);
   const isInView = useInView(ref, { once: true });
-  const isMobile = useIsMobile();
   const { theme } = useTheme();
-  const ballColor = theme === "dark" ? "#ffffff" : "#000000";
 
   return (
     <section id="home" className="min-h-screen flex items-center py-32 relative">
+      <div className="absolute inset-0 pointer-events-none opacity-[0.07]">
+        <Threads
+          color={theme === "dark" ? [1, 1, 1] : [0, 0, 0]}
+          amplitude={0.8}
+          distance={0}
+        />
+      </div>
+
       <motion.div
         ref={ref}
         initial={{ opacity: 0 }}
         animate={isInView ? { opacity: 1 } : {}}
         transition={{ duration: 0.6 }}
-        className="max-w-2xl"
+        className="max-w-2xl relative z-10"
       >
         <motion.div
           initial={{ opacity: 0, y: 20 }}
@@ -80,27 +85,6 @@ export function HeroSection() {
           </p>
         </motion.div>
       </motion.div>
-
-      {!isMobile && (
-        <motion.div
-          initial={{ opacity: 0 }}
-          animate={isInView ? { opacity: 1 } : {}}
-          transition={{ duration: 1.2, delay: 0.8 }}
-          className="absolute right-0 top-1/2 -translate-y-1/2 w-[400px] h-[400px] pointer-events-auto hidden lg:block"
-        >
-          <MetaBalls
-            color={ballColor}
-            cursorBallColor={ballColor}
-            ballCount={12}
-            speed={0.3}
-            animationSize={25}
-            enableTransparency={true}
-            hoverSmoothness={0.1}
-            clumpFactor={1.2}
-            cursorBallSize={2}
-          />
-        </motion.div>
-      )}
     </section>
   );
 }

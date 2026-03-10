@@ -6,6 +6,7 @@ import { Badge } from "@/components/ui/badge";
 import { ExternalLink } from "lucide-react";
 import { useTheme } from "@/hooks/useTheme";
 import TiltedCard from "@/components/TiltedCard";
+import Squares from "@/components/Squares";
 
 function ProjectCard({ project, index }: { project: typeof projects[0]; index: number }) {
   const ref = useRef<HTMLDivElement>(null);
@@ -78,25 +79,38 @@ function ProjectCard({ project, index }: { project: typeof projects[0]; index: n
 export function ProjectsSection() {
   const ref = useRef<HTMLDivElement>(null);
   const isInView = useInView(ref, { once: true, margin: "-40px" });
+  const { theme } = useTheme();
 
   return (
-    <section id="projects" className="py-32">
-      <motion.div
-        ref={ref}
-        initial={{ opacity: 0, y: 20 }}
-        animate={isInView ? { opacity: 1, y: 0 } : {}}
-        transition={{ duration: 0.5 }}
-      >
-        <p className="text-sm text-muted-foreground uppercase tracking-widest mb-2">Selected work</p>
-        <h2 className="text-3xl md:text-4xl font-semibold mb-16" style={{ fontFamily: "'Space Grotesk', sans-serif" }}>
-          Projects
-        </h2>
-      </motion.div>
+    <section id="projects" className="py-32 relative">
+      <div className="absolute inset-0 pointer-events-none opacity-[0.04]">
+        <Squares
+          direction="diagonal"
+          speed={0.3}
+          borderColor={theme === "dark" ? "#ffffff" : "#000000"}
+          squareSize={48}
+          hoverFillColor="transparent"
+        />
+      </div>
 
-      <div className="flex flex-col gap-24 md:gap-36">
-        {projects.map((project, i) => (
-          <ProjectCard key={project.id} project={project} index={i} />
-        ))}
+      <div className="relative z-10">
+        <motion.div
+          ref={ref}
+          initial={{ opacity: 0, y: 20 }}
+          animate={isInView ? { opacity: 1, y: 0 } : {}}
+          transition={{ duration: 0.5 }}
+        >
+          <p className="text-sm text-muted-foreground uppercase tracking-widest mb-2">Selected work</p>
+          <h2 className="text-3xl md:text-4xl font-semibold mb-16" style={{ fontFamily: "'Space Grotesk', sans-serif" }}>
+            Projects
+          </h2>
+        </motion.div>
+
+        <div className="flex flex-col gap-24 md:gap-36">
+          {projects.map((project, i) => (
+            <ProjectCard key={project.id} project={project} index={i} />
+          ))}
+        </div>
       </div>
     </section>
   );
