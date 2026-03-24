@@ -4,6 +4,8 @@ import PomodoroImg from "@/data/images/PomodoroTimer.png";
 import NotDogsImg from "@/data/images/NotDogsBoxFolded.png";
 import PortfolioBanner from "@/data/images/portfoliobanner.png";
 import SummateImg from "@/data/images/summate.png";
+import RandomCoffeeImg from "@/data/images/randomCoffeelogo.png";
+import RandomCoffeeLightImg from "@/data/images/randomCoffeeLight.png";
 import SunnyFyImg from "@/data/images/sunnyfylogo.png";
 import SunnyFyLightImg from "@/data/images/sunnyfylogo_light.png";
 
