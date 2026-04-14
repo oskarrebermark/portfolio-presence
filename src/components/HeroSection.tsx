@@ -83,8 +83,8 @@ export function HeroSection() {
             studies have spanned interaction design, sound in interaction, dynamic web development, and haptics.
           </p>
           <p className="text-sm text-muted-foreground leading-relaxed max-w-lg">
-            Previously an exchange student at Science Tokyo in Japan. Currently writing my master's thesis on Conversion
-            Rate Optimization.
+            Currently writing my master's thesis at Eatit AB, exploring how to increase their conversion rate through
+            Conversion Rate Optimization. Previously an exchange student at Science Tokyo in Japan.
           </p>
         </motion.div>
       </motion.div>
