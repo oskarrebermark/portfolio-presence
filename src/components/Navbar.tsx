@@ -17,7 +17,16 @@ export function Navbar() {
   useEffect(() => {
     const handleScroll = () => {
       const sections = ["home", "projects", "contact"];
-      for (const section of sections.reverse()) {
+      const scrollBottom = window.innerHeight + window.scrollY;
+      const docHeight = document.documentElement.scrollHeight;
+
+      // If near bottom of page, activate last section
+      if (docHeight - scrollBottom < 100) {
+        setActive("contact");
+        return;
+      }
+
+      for (const section of [...sections].reverse()) {
         const el = document.getElementById(section);
         if (el && el.getBoundingClientRect().top <= 120) {
           setActive(section);

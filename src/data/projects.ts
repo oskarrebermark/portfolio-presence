@@ -4,6 +4,8 @@ import PomodoroImg from "@/data/images/PomodoroTimer.png";
 import NotDogsImg from "@/data/images/NotDogsBoxFolded.png";
 import PortfolioBanner from "@/data/images/portfoliobanner.png";
 import SummateImg from "@/data/images/summate.png";
+import RandomCoffeeImg from "@/data/images/randomCoffeelogo.png";
+import RandomCoffeeLightImg from "@/data/images/randomCoffeeLight.png";
 import SunnyFyImg from "@/data/images/sunnyfylogo.png";
 import SunnyFyLightImg from "@/data/images/sunnyfylogo_light.png";
 
@@ -36,6 +38,16 @@ export const projects: Project[] = [
     image: SummateImg,
     concepts: ["Figma", "Double Diamond", "Interaction Design"],
     link: "https://www.figma.com/proto/JI7gso7NeuaHWgyLZkHq8L/Summate?node-id=0-1&t=ILEH0shLTm3kZXvw-1",
+  },
+  {
+    id: "6",
+    title: "Coffee Meeting Generator",
+    description:
+      "A web app designed to foster cross-departmental connections in the workplace by randomly pairing colleagues for coffee meetings. I developed this as a side project during my time at the European Parliament after HR expressed a need for a tool to help employees get to know people outside their own teams.",
+    image: RandomCoffeeImg,
+    imageDark: RandomCoffeeLightImg,
+    concepts: ["React", "Firebase", "HR Tech", "Community Building"],
+    link: "https://random-coffee-generator-881ce.web.app",
   },
   {
     id: "3",

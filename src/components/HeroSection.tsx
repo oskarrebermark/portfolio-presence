@@ -1,19 +1,27 @@
 import { useRef } from "react";
 import { motion, useInView } from "framer-motion";
 import { Badge } from "@/components/ui/badge";
+import { useTheme } from "@/hooks/useTheme";
+import ShinyText from "@/components/ShinyText";
+import Threads from "@/components/Threads";
 
 export function HeroSection() {
   const ref = useRef<HTMLDivElement>(null);
   const isInView = useInView(ref, { once: true });
+  const { theme } = useTheme();
 
   return (
-    <section id="home" className="min-h-screen flex items-center py-32">
+    <section id="home" className="min-h-screen flex items-center py-32 relative">
+      <div className="absolute inset-0 pointer-events-none opacity-[0.07]">
+        <Threads color={theme === "dark" ? [1, 1, 1] : [0, 0, 0]} amplitude={0.8} distance={0} />
+      </div>
+
       <motion.div
         ref={ref}
         initial={{ opacity: 0 }}
         animate={isInView ? { opacity: 1 } : {}}
         transition={{ duration: 0.6 }}
-        className="max-w-2xl"
+        className="max-w-2xl relative z-10"
       >
         <motion.div
           initial={{ opacity: 0, y: 20 }}
@@ -22,10 +30,15 @@ export function HeroSection() {
           className="flex items-center gap-3 mb-4"
         >
           <p className="text-sm text-muted-foreground uppercase tracking-widest">Developer &amp; Designer</p>
-          <Badge variant="outline" className="text-xs font-medium border-[hsl(var(--status)/0.4)] text-[hsl(var(--status-foreground))] bg-[hsl(var(--status)/0.1)]">
-            <span className="mr-1.5 inline-block h-1.5 w-1.5 rounded-full bg-[hsl(var(--status))] animate-pulse" />
-            Open to work
-          </Badge>
+          <a href="https://linkedin.com/in/oskar-rebermark" target="_blank" rel="noopener noreferrer">
+            <Badge
+              variant="outline"
+              className="text-xs font-medium border-[hsl(var(--status)/0.4)] text-[hsl(var(--status-foreground))] bg-[hsl(var(--status)/0.1)] cursor-pointer hover:bg-[hsl(var(--status)/0.2)] transition-colors"
+            >
+              <span className="mr-1.5 inline-block h-1.5 w-1.5 rounded-full bg-[hsl(var(--status))] animate-pulse" />
+              Open to work
+            </Badge>
+          </a>
         </motion.div>
 
         <motion.h1
@@ -39,7 +52,13 @@ export function HeroSection() {
           <br />
           digital experiences
           <br />
-          <span className="text-muted-foreground">with passion.</span>
+          <ShinyText
+            text="with passion."
+            color={theme === "dark" ? "#737373" : "#737373"}
+            shineColor={theme === "dark" ? "#ffffff" : "#000000"}
+            speed={3}
+            className="text-4xl sm:text-5xl md:text-6xl font-semibold leading-tight tracking-tight"
+          />
         </motion.h1>
 
         <motion.p
@@ -60,10 +79,12 @@ export function HeroSection() {
         >
           <p className="text-xs text-muted-foreground uppercase tracking-widest font-medium">About me</p>
           <p className="text-sm text-muted-foreground leading-relaxed max-w-lg">
-            Second-year master's student in Interactive Media Technology at KTH Royal Institute of Technology. My studies have spanned interaction design, sound in interaction, dynamic web development, and haptics.
+            Second-year master's student in Interactive Media Technology at KTH Royal Institute of Technology. My
+            studies have spanned interaction design, sound in interaction, dynamic web development, and haptics.
           </p>
           <p className="text-sm text-muted-foreground leading-relaxed max-w-lg">
-            Previously an exchange student at Science Tokyo in Japan. Currently writing my master's thesis on Conversion Rate Optimization.
+            Currently writing my master's thesis at Eatit AB, exploring how to increase their conversion rate through
+            Conversion Rate Optimization. Previously an exchange student at Science Tokyo in Japan.
           </p>
         </motion.div>
       </motion.div>

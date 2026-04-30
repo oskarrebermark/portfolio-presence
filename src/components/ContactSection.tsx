@@ -7,13 +7,14 @@ export function ContactSection() {
   const isInView = useInView(ref, { once: true, margin: "-80px" });
 
   return (
-    <section id="contact" className="py-32">
+    <section id="contact" className="py-32 relative">
+
       <motion.div
         ref={ref}
         initial={{ opacity: 0, y: 20 }}
         animate={isInView ? { opacity: 1, y: 0 } : {}}
         transition={{ duration: 0.5 }}
-        className="max-w-lg"
+        className="max-w-lg relative z-10"
       >
         <p className="text-sm text-muted-foreground uppercase tracking-widest mb-2">Get in touch</p>
         <h2 className="text-3xl md:text-4xl font-semibold mb-6" style={{ fontFamily: "'Space Grotesk', sans-serif" }}>
@@ -51,7 +52,7 @@ export function ContactSection() {
         </div>
       </motion.div>
 
-      <div className="mt-32 pt-8 border-t border-border">
+      <div className="mt-32 pt-8 border-t border-border relative z-10">
         <p className="text-xs text-muted-foreground">© {new Date().getFullYear()} — Built with care.</p>
       </div>
     </section>

@@ -1,14 +1,18 @@
 import { useRef } from "react";
+import { useIsMobile } from "@/hooks/use-mobile";
 import { motion, useInView } from "framer-motion";
 import { projects } from "@/data/projects";
 import { Badge } from "@/components/ui/badge";
 import { ExternalLink } from "lucide-react";
 import { useTheme } from "@/hooks/useTheme";
+import TiltedCard from "@/components/TiltedCard";
+import Squares from "@/components/Squares";
 
 function ProjectCard({ project, index }: { project: typeof projects[0]; index: number }) {
   const ref = useRef<HTMLDivElement>(null);
   const isInView = useInView(ref, { once: true, margin: "-80px" });
   const { theme } = useTheme();
+  const isMobile = useIsMobile();
   const imageSrc = theme === "dark" && project.imageDark ? project.imageDark : project.image;
   const isReversed = index % 2 === 1;
 
@@ -30,12 +34,19 @@ function ProjectCard({ project, index }: { project: typeof projects[0]; index: n
             {...wrapperProps}
             className={`group flex flex-col ${isReversed ? "md:flex-row-reverse" : "md:flex-row"} gap-8 md:gap-12 items-center ${hasLink ? "cursor-pointer" : ""}`}
           >
-            <div className="w-full md:w-1/2 overflow-hidden rounded-lg">
-              <img
-                src={imageSrc}
-                alt={project.title}
-                loading="lazy"
-                className={`w-full aspect-[16/10] object-cover transition-transform duration-700 group-hover:scale-105`}
+            <div className="w-full md:w-1/2 overflow-visible rounded-lg">
+              <TiltedCard
+                imageSrc={imageSrc}
+                altText={project.title}
+                captionText={project.title}
+                containerHeight={isMobile ? "240px" : "320px"}
+                containerWidth="100%"
+                imageHeight={isMobile ? "200px" : "280px"}
+                imageWidth="100%"
+                scaleOnHover={1.05}
+                rotateAmplitude={12}
+                showMobileWarning={false}
+                showTooltip={false}
               />
             </div>
             <div className="w-full md:w-1/2 space-y-4">
@@ -68,25 +79,38 @@ function ProjectCard({ project, index }: { project: typeof projects[0]; index: n
 export function ProjectsSection() {
   const ref = useRef<HTMLDivElement>(null);
   const isInView = useInView(ref, { once: true, margin: "-40px" });
+  const { theme } = useTheme();
 
   return (
-    <section id="projects" className="py-32">
-      <motion.div
-        ref={ref}
-        initial={{ opacity: 0, y: 20 }}
-        animate={isInView ? { opacity: 1, y: 0 } : {}}
-        transition={{ duration: 0.5 }}
-      >
-        <p className="text-sm text-muted-foreground uppercase tracking-widest mb-2">Selected work</p>
-        <h2 className="text-3xl md:text-4xl font-semibold mb-16" style={{ fontFamily: "'Space Grotesk', sans-serif" }}>
-          Projects
-        </h2>
-      </motion.div>
+    <section id="projects" className="py-32 relative">
+      <div className="absolute inset-0 pointer-events-none opacity-[0.04]">
+        <Squares
+          direction="diagonal"
+          speed={0.3}
+          borderColor={theme === "dark" ? "#ffffff" : "#000000"}
+          squareSize={48}
+          hoverFillColor="transparent"
+        />
+      </div>
 
-      <div className="flex flex-col gap-24 md:gap-36">
-        {projects.map((project, i) => (
-          <ProjectCard key={project.id} project={project} index={i} />
-        ))}
+      <div className="relative z-10">
+        <motion.div
+          ref={ref}
+          initial={{ opacity: 0, y: 20 }}
+          animate={isInView ? { opacity: 1, y: 0 } : {}}
+          transition={{ duration: 0.5 }}
+        >
+          <p className="text-sm text-muted-foreground uppercase tracking-widest mb-2">Selected work</p>
+          <h2 className="text-3xl md:text-4xl font-semibold mb-16" style={{ fontFamily: "'Space Grotesk', sans-serif" }}>
+            Projects
+          </h2>
+        </motion.div>
+
+        <div className="flex flex-col gap-24 md:gap-36">
+          {projects.map((project, i) => (
+            <ProjectCard key={project.id} project={project} index={i} />
+          ))}
+        </div>
       </div>
     </section>
   );
